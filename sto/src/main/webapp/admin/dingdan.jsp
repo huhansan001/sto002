@@ -23,19 +23,19 @@
 					<div class="Nav_li">
 						<ul>
 							<li class="code_shou">
-								<a href="BackHome.jsp" class="code_ye">首页 </a>
+								<a href="javascript:void(0)" class="code_ye">首页 </a>
 							</li>
 							<li class="code_zai">
-								<a href="Mailing.jsp" class="code_xian">在线寄件</a>
+								<a href="javascript:void(0)" class="code_xian" style="color: rgb(237, 105, 0);">在线寄件</a>
 							</li>
 							<li class="code_yun">
-								<a href="query.jsp" class="code_cha">运单查询</a>
+								<a href="javascript:void(0)" class="code_cha">运单查询</a>
 							</li>
 							<li class="code_ding">
-								<a href="dingdan.jsp" class="code_guan"  style="color: rgb(237, 105, 0);">订单管理</a>
+								<a href="javascript:void(0)" class="code_guan">订单管理</a>
 							</li>
 							<li class="code_zhang">
-								<a href="account.jsp" class="code_hu">账户管理</a>
+								<a href="javascript:void(0)" class="code_hu">账户管理</a>
 							</li>
 						</ul>
 					</div>
@@ -52,16 +52,16 @@
 	    		</div>
 	    		<ul id="ul">
 						<li>
-							<a href="#" style="color: #ed6800;">全部订单</a>
+							<a onclick="xiugai01()" id="tishi01" href="#" style="color: #ed6800;">全部订单</a>
 						</li>
 						<li>
-							<a href="#">处理中</a>
+							<a onclick="xiugai02()" id="tishi02" href="#">处理中</a>
 						</li>
 						<li>
-							<a href="#">已取消</a>
+							<a onclick="xiugai03()" id="tishi03" href="#">已取消</a>
 						</li>
 						<li>
-							<a href="#">已完成</a>
+							<a onclick="xiugai04()" id="tishi04" href="#">已完成</a>
 						</li>
 				</ul>		
 	    	</div>
@@ -143,6 +143,30 @@
 				//里面添加ajax提交方式 用得到的值判断
 				alert("抱歉！数据中没有此订单号！");
 			})
+			function xiugai01(){
+				$("#tishi01").css("color","#ED6800");
+				$("#tishi02").css("color","#000");
+				$("#tishi03").css("color","#000");
+				$("#tishi04").css("color","#000");
+			}
+			function xiugai02(){
+				$("#tishi01").css("color","#000");
+				$("#tishi02").css("color","#ED6800");
+				$("#tishi03").css("color","#000");
+				$("#tishi04").css("color","#000");
+			}
+			function xiugai03(){
+				$("#tishi01").css("color","#000");
+				$("#tishi02").css("color","#000");
+				$("#tishi03").css("color","#ED6800");
+				$("#tishi04").css("color","#000");
+			}
+			function xiugai04(){
+				$("#tishi01").css("color","#000");
+				$("#tishi02").css("color","#000");
+				$("#tishi03").css("color","#000");
+				$("#tishi04").css("color","#ED6800");
+			}
 		</script>
 	</body>
 </html>

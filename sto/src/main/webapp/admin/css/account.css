@@ -1,8 +1,7 @@
 * {
 	margin: auto;
 	padding: 0px;
-	font-family: Î¢ÈíÑÅºÚ;
-	color: #555;
+	font-family: å¾®è½¯é›…é»‘;
 }
 
 a {
@@ -25,6 +24,7 @@ a {
 	background-color: #f0f4f5;
 	;
 }
+
 
 .user_out {
 	cursor: pointer;
@@ -63,7 +63,7 @@ a {
 .Nav_li li a {
 	float: left;
 	list-style: none;
-	line-height: 55px;
+	line-height: 60px;
 	font-size: 16px;
 	color: #555555;
 }
@@ -141,11 +141,12 @@ a {
 #editImg {
 	margin-left: 640px;
 	line-height: 50px;
+	margin-top: 5px;
 }
 
 #header {
 	width: 742px;
-	height: 28px;
+	height: 152px;
 	background-color: white;
 }
 
@@ -167,7 +168,22 @@ a {
 	font-size: 12px;
 	margin-left: 10px;
 }
-
+.spaceText{
+	line-height: 50px;
+	color: #555;
+	font-size: 12px;
+	margin-left: 600px;
+	color:  rgb(237, 105, 0);
+	display: none;
+}
+.spaceText1{
+	line-height: 50px;
+	color: #555;
+	font-size: 12px;
+	margin-left: 10px;
+	color:  rgb(237, 105, 0);
+	display: none;
+}
 #vContent {
 	width: 742px;
 	height: 190px;

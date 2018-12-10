@@ -4,186 +4,229 @@
 <html>
 <head>
 <meta charset="UTF-8">
-		<title>申通快递|会员中心|客户的满意,申通的追求!</title>
-		<link href="./img/sto.ico" rel="icon">
-		<link rel="stylesheet" type="text/css" href="css/account.css" />
-		<link rel="stylesheet" type="text/css" href="css/pick-pcc.min.1.0.1.css"/>
-		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
-		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
-		<script type="text/javascript" src="layui/laydate/laydate.js"></script>
-		<script type="text/javascript" src="js/pick-pcc.min.1.0.1.js"></script>
+<title>申通快递|会员中心|客户的满意,申通的追求!</title>
+<link rel="shortcut icon" href="img/sto.ico" />
+<link rel="stylesheet" type="text/css" href="css/account.css" />
+<link rel="stylesheet" type="text/css" href="css/pick-pcc.min.1.0.1.css" />
+<script type="text/javascript" src="jquery/jquery-3.2.1/jquery-3.2.1.js"></script>
+<script type="text/javascript"
+	src="jquery/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="layui/laydate/laydate.js"></script>
+<script type="text/javascript" src="js/pick-pcc.min.1.0.1.js"></script>
+<script type="text/javascript" src="layui/layer/layer.js"></script>
+
 
 </head>
-<body style="background: #f0f4f5;font-size: 12px">
-		<!-- 头部 -->
-		<header>
-			<div class="header">
-				<div class="header_logstate">
-					您好,180******63 <a style="cursor: pointer;color: #9b9b9b;">退出</a>
-				</div>
+<body style="background: #f0f4f5;">
+	<!-- 头部 -->
+	<header>
+		<div class="header">
+			<div class="header_logstate">
+				<span>您好,180******63</span> <span class="user_out">退出</span>
 			</div>
-		</header>
-		<!-- 头部结束 -->
-		<!-- 导航 -->
-		<nav>
-			<div class="Nav_Inside">
-				<div class="NavBox">
-					<div class="Nav_logo">
-						<img src="img/logo.png" alt="Logo" />
-					</div>
-					<div class="Nav_li">
-						<ul>
-							<li>
-								<a href="BackHome.jsp">首页 </a>
-							</li>
-							<li>
-								<a href="Mailing.jsp" >在线寄件</a>
-							</li>
-							<li>
-								<a href="query.jsp">运单查询</a>
-							</li>
-							<li>
-								<a href="dingdan.jsp">订单管理</a>
-							</li>
-							<li>
-								<a href="account.jsp" style="color: rgb(237, 105, 0);">账户管理</a>
-							</li>
-						</ul>
-					</div>
+		</div>
+	</header>
+	<!-- 头部结束 -->
+	<!-- 导航 -->
+	<nav>
+		<div class="Nav_Inside">
+			<div class="NavBox">
+				<div class="Nav_logo">
+					<img src="img/logo.png" alt="Logo" />
 				</div>
-			</div>
-		</nav>
-		<!-- 主体 -->
-		<div id="body">
-			<div id="w1">
-				<div id="title">
-					<span id="titleImg"><img src="img/user.png" /></span>
-					<span id="titleText">账户管理</span>
-				</div>
-				<ul id="ul">
-					<li>
-						<a href="#" style="color:#ee6900 ;">基本信息</a>
-					</li>
-					<li>
-						<a href="address.jsp">地址中心</a>
-					</li>
-					<li>
-						<a href="#">账号绑定</a>
-					</li>
-					<li>
-						<a href="#">月结客户</a>
-					</li>
-					<li>
-						<a href="nameVerification.jsp">实名认证</a>
-					</li>
-					<li>
-						<a href="#">我的订阅</a>
-					</li>
-				</ul>
-			</div>
-			<div id="w2">
-				<div id="titleBox">
-					<span id="spaceText">个人信息</span>
-					<a href="#" id="editImg"><img src="img/edit.png" /></a>
-				</div>
-				<div id="header">
-
-				</div>
-				<div id="userInfoBox">
-					<div id="line">
-						<div id="l_left">
-							<label>姓名：</label>
-							<input type="text" id="userText" name="UserName" value="">
-						</div>
-						<div id="l_right">
-							<label>生日:</label>
-							<input id="d11" class="date" type="text" name="Birthday" value="">
-
-						</div>
-					</div>
-					<div id="line_2">
-						<div id="l2_left">
-							<label>手机：</label>
-							<input type="text" id="userText" name="mobile" value="13107217772">
-						</div>
-						<div id="l2_right">
-							<label>性别:</label>
-							<input id="d11" type="text" name="sex" value="">
-						</div>
-					</div>
-					<div id="line_3">
-						<div id="l3_left">
-							<label style="display:inline-block;margin-top: 14px;">省市区：</label>
-							<a href="javascript:void(0)" class="pick-area pick-area4" id="cityfont" style="margin-top: -30px; margin-left: 62px;font-size: 14px;background: white;"></a>
-							<input type="hidden" id="userText" name="city" value="" style="position: relative;left:40px;">
-						</div>
-						<div id="l3_right">
-							<label>详细地址:</label>
-							<textarea id="d12" type="text" name="HomeAddress" value=""></textarea>
-						</div>
-					</div>
-				</div>
-				<div id="space">
-					<span id="spaceText">验证信息</span>
-				</div>
-				<div id="vContent">
-
-				</div>
-				<div id="space">
-					<span id="spaceText">密码设置</span>
-				</div>
-				<div id="footer">
-					<p>
-						<span>登陆后修改您的申通账号密码</span>
-						<a href="../wjmm1.jsp">修改>></a>
-					</p>
+				<div class="Nav_li">
+					<ul>
+						<li><a href="javascript:void(0)">首页 </a></li>
+						<li><a href="javascript:void(0)">在线寄件</a></li>
+						<li><a href="javascript:void(0)">运单查询</a></li>
+						<li><a href="javascript:void(0)">订单管理</a></li>
+						<li><a href="javascript:void(0)"
+							style="color: rgb(237, 105, 0);">账户管理</a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
-		<!--
+	</nav>
+	<!-- 主体 -->
+	<div id="body">
+		<div id="w1">
+			<div id="title">
+				<span id="titleImg"><img src="img/user.png" /></span> <span
+					id="titleText">账户管理</span>
+			</div>
+			<ul id="ul">
+				<li><a href="#" style="color: #ee6900;">基本信息</a></li>
+				<li><a href="#">地址中心</a></li>
+				<li><a href="#">账号绑定</a></li>
+				<li><a href="#">月结客户</a></li>
+				<li><a href="#">实名认证</a></li>
+				<li><a href="#">我的订阅</a></li>
+			</ul>
+		</div>
+		<div id="w2">
+			<div id="titleBox">
+				<span id="spaceText">个人信息</span>
+				 <a href="#" id="sw"><span class="spaceText">取消</span> </a>
+				  <a href="#" id=sw><span class="spaceText1">保存</span> </a>
+				 <a href="#" id="editImg">
+					<img src="img/edit.png" id="iii" /></a>
+			</div>
+			<div id="header"></div>
+			<div id="userInfoBox">
+				<div id="line">
+					<div id="l_left"   class="upUser">
+						<label>姓名：</label> <input type="text" id="userText" class="UserName"
+							name="UserName" value="" style="padding-left:10px">
+					</div>
+					<div id="l_right">
+						<label>生日:</label> <input id="d11" class="date" type="text"
+							name="Birthday" value="" style="padding-left:10px">
+
+					</div>
+				</div>
+				<div id="line_2">
+					<div id="l2_left"   class="upUser">
+						<label>手机：</label> <input type="text" id="userText" class="mobile" name="mobile"
+							value="" style="padding-left:10px">
+					</div>
+					<div id="l2_right">
+						<label>性别:</label> 
+						<input id="d11" type="text" name="sex" class="sex" value="" style="padding-left:10px">
+					</div>
+				</div>
+				<div id="line_3">
+					<div id="l3_left">
+						<label style="margin-top: 10px;">省市区：</label> <a
+							href="javascript:void(0)" class="pick-area pick-area4"
+							id="cityfont"
+							style="margin-top: -17px; margin-left: 62px; font-size: 14px; background: white;"></a>
+						<input type="hidden" id="userText" class="city" name="city" value=""
+							style="position: relative; left: 40px;padding-left:10px" >
+					</div>
+					<div id="l3_right">
+						<label>详细地址:</label>
+						<textarea id="d12" type="text" name="HomeAddress" value="" style="padding-left:5px"></textarea>
+					</div>
+				</div>
+			</div>
+			<div id="space">
+				<span id="spaceText">验证信息</span>
+			</div>
+			<div id="vContent"></div>
+			<div id="space">
+				<span id="spaceText">密码设置</span>
+			</div>
+			<div id="footer">
+				<p>
+					<span>登陆后修改您的申通账号密码</span> <a href="pass.html">修改>></a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<!--
         	作者：offline
         	时间：2018-12-06
         	描述：底部
         -->
-			<!-- 底部 -->
-		<footer style="background: white;margin-top: 50px;">
-			<div class="foot_slide">
-				<div class="foot_chi">
-					<div class="kefu">
-						<p style="margin-top: 50px;">
-							<a>客服热线</a>
-						</p>
-						<p style="margin-top: 20px;">
-							<a>95543</a>
-						</p>
-					</div>
-					<div class="code">
-						<img src="img/chat_code.jpg" />
-						<img src="img/qq_code.png" />
-						<img src="img/pay_code.png" />
-						<div>
-							<span>微信公众号</span>
-							<span>QQ公众号</span>
-							<span>支付宝服务窗</span>
-						</div>
+	<!-- 底部 -->
+	<footer style="background: white; margin-top: 50px;">
+		<div class="foot_slide">
+			<div class="foot_chi">
+				<div class="kefu">
+					<p style="margin-top: 50px;">
+						<a>客服热线</a>
+					</p>
+					<p style="margin-top: 20px;">
+						<a>95543</a>
+					</p>
+				</div>
+				<div class="code">
+					<img src="img/chat_code.jpg" /> <img src="img/qq_code.png" /> <img
+						src="img/pay_code.png" />
+					<div>
+						<span>微信公众号</span> <span>QQ公众号</span> <span>支付宝服务窗</span>
 					</div>
 				</div>
 			</div>
-
-		</footer>
-		<!-- 版权 -->
-		<div class="copyright">
-			<div class="copy">
-				<span class="copyright">
-               		? 2017.All RIGHT RESERVED.申通快递有限公司 版权所有
-               		<img src="img/ghs.png" style="background: #f0f4f5;margin-left: 30px; margin-top: 5px;" />
-                   	<span style="color: #ed6a00;background-color: #f0f4f5;">沪ICP备13037807号-1</span>
-				</span>
-			</div>
 		</div>
-		<script type="text/javascript">
+
+	</footer>
+	<!-- 版权 -->
+	<div class="copyright">
+		<div class="copy">
+			<span class="copyright"> ? 2017.All RIGHT RESERVED.申通快递有限公司
+				版权所有 <img src="img/ghs.png"
+				style="background: #f0f4f5; margin-left: 30px; margin-top: 5px;" />
+				<span style="color: #ed6a00; background-color: #f0f4f5;">沪ICP备13037807号-1</span>
+			</span>
+		</div>
+	</div>
+	<script type="text/javascript">
 		</script>
-		<script>
+	<script>
+	$(function(){
+		$("#editImg").click(function(){
+			$(this).css("display","none");
+			$(".spaceText").show();
+			$(".spaceText1").show();
+		});
+		
+		$(".spaceText").click(function(){
+			$("#editImg").show();
+			$(".spaceText").css("display","none");
+			$(".spaceText1").css("display","none");
+		});
+	});
+	
+	//格式验证
+	$(function(){
+		$(".spaceText1").click(function(){
+			//姓名认证
+			var UserName=$(".UserName").val();
+			if(UserName.length>0){
+				//手机认证
+				var mobile=$(".mobile").val();
+				if(mobile.length>0){
+					var pattern=/^1[34578]\d{9}$/;
+					if(pattern.test(mobile)){
+						//生日认证
+						var date=$(".date").val();
+						if(date.length>0){
+							//地址认证
+							var city=$(".city").val();
+							if(city.length>0){
+								//性别认证
+								var sex=$(".sex").val();
+								if(sex.length>0){
+									
+								}else{
+									layer.msg('请填写你的性别');
+									$("sex").focus();
+								}
+								
+							}else{
+								layer.msg('省市区不能为空');
+								$("city").focus();
+							}
+						}else{
+							layer.msg('请填写你的生日');
+							$("date").focus();
+						}
+					}else{
+						layer.msg('手机格式不正确');
+						$("mobile").focus();
+					}
+					
+				}else{
+					layer.msg('请输入你的手机号码');
+					$("mobile").focus();
+				}
+			}else{
+				layer.msg('请输入你的姓名');
+				$("UserName").focus();
+			}
+		})
+	})
 			//自定义格式
 			laydate.render({
 				elem: '.date',
@@ -213,5 +256,5 @@
 				});
 			});
 		</script>
-	</body>
+</body>
 </html>
