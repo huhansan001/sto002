@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>申通快递|会员中心|客户的满意,申通的追求!</title>
+		<link href="img/sto.ico" rel="icon">
+		<link rel="stylesheet" href="css/head1.css" />
+		<script src="js/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<div class="header clearfix">
+			<div class="headerTop">
+				<span>您好,</span>
+				<span>您目前还未登录</span>
+				<a href="">去登录</a>
+			</div>
+		</div>
+		<div class="Nav">
+			<div class="NavBox">
+				<div class="Login">
+					<img src="img/Logo.png" alt="Logo" />
+				</div>
+				<div class="navList">
+					<ul>
+						<li>
+							<a href="" class="on">首页</a>
+						</li>
+						<li>
+							<a href="">在线寄件</a>
+						</li>
+						<li>
+							<a href="">运单查询</a>
+						</li>
+						<li>
+							<a href="">订单管理</a>
+						</li>
+						<li>
+							<a href="">账户管理</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="box" style="min-height:800px;">
+			<div class="viewContent">
+				<div class="title">
+					<div>找回密码</div>
+				</div>
+				<div class="viewInfo">
+					<div class="schedule">
+						<div class="planTxt">
+							<p><span class="num on" style="background: #EE6A00;">1</span></p>
+							<p>选择验证方式</p>
+						</div>
+						<div class="plan">
+							<div class="planing one"></div>
+						</div>
+						<div class="planTxt">
+							<p><span class="num on" id="two" style="background: #EE6A00;">2</span></p>
+							<p>输入验证码</p>
+						</div>
+						<div class="plan" >
+							<div class="planing two" style="width: 100%;"></div>
+						</div>
+						<div class="planTxt">
+							<p><span class="num" id="three" style="background: #EE6A00;">3</span></p>
+							<p>重设密码</p>
+						</div>
+						<div class="plan">
+							<div class="planing three" style="width: 50%;"  ></div>
+						</div>
+						<div class="planTxt">
+							<p><span class="num" id="four">✔</span></p>
+							<p>设置成功</p>
+						</div>
+					</div>
+					<div class="verifyType">
+						<div class="type telChoose">
+							<div class="iradio_flat-red" style="float: left;" id="shoujis" ">
+								<input type="radio" id="shouji"  name="choose" checked="checked" style="position: absolute; opacity: 0;cursor: pointer;width: 20px;">
+							</div>
+							<div class="right" style="float: left;">
+								<p class="txt">通过原手机验证</p>
+								<p class="desc">(原手机号还能正常接受短信，通过手机短信验证码进行验证)</p>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="type emailChoose">
+							<div class="iradio_flat-reds" id="emails" >
+								<input type="radio"  id="email" name="choose" style="position: absolute; opacity: 0;cursor: pointer;"  >
+							</div>
+							<div class="right">
+								<p class="txt">通过邮箱验证</p>
+								<p class="desc">(通过已绑定的邮箱接受邮件，进行身份验证)</p>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="telContent">
+							<div class="fromBox" id="telBox">
+								<p>
+									<label id="upshouji">输入密码：</label>
+									<input type="text" class="emaliTxt" id="mobile" />
+								</p>
+								<p>
+									<label id="yanzNum">确认新密码：</label>
+									<input type="text" class="verifyTxt" id="code" />
+									<input type="button" id="sendFGPWDPhone" class="sendVerifyBox" value="发送验证码" />
+								</p>
+								<p>
+									<a class="chooseBtn s_back" href="">上一步</a>
+                        			<a class="chooseBtn s_next" href="">下一步</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer">
+			<div class="foot_slide">
+				<div class="kefu">
+					<a>客服热线</a>
+					<a>95543</a>
+				</div>
+				<div class="code">
+					<span>
+                    <img src="img/jj.jpg" /><br />
+                    <a class="aaa">微信公众号</a>
+                </span>
+					<span>
+                    <img src="img/22.png" /><br />
+                    <a  class="aaa">QQ公众号</a>
+                </span>
+					<span>
+                    <img src="img/gg.png" /> <br />
+                    <a  class="aaa">支付宝服务窗</a>
+                </span>
+				</div>
+			</div>
+			<div class="dibu">
+				<span class="copyright">
+                © 2017.All RIGHT RESERVED.申通快递有限公司 版权所有
+            </span>
+				<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011802001016">
+					<span class="records">
+                    <img src="img/e.png" style="align-content:center;">
+                    沪ICP备13037807号-1
+
+                </span>
+				</a>
+			</div>
+		</div>
+		</div>
+
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script>
+			$(function() {
+				$("#sendFGPWDPhone").hide();
+				$("#code").css("width","350px");
+				$("#shouji").click(function(){
+					$("#upshouji").text("输入密码：");
+					$("#yanzNum").text("确认新密码:");
+					$("#sendFGPWDPhone").hide();
+					$("#code").css("width","350px");
+					$("#shoujis").css("background-position-x","70%");
+					$("#emails").css("background-position-x","56%");
+				});
+				$("#emails").click(function() {
+					$("#sendFGPWDPhone").show();
+					$("#upshouji").text("邮箱：");
+					$("#yanzNum").text("验证码:");
+					$("#shoujis").css("background-position-x","56%");
+					$("#emails").css("background-position-x","70%");
+					$("#code").css("width","232px");
+				});
+			})
+		</script>
+	</body>
+</html>
