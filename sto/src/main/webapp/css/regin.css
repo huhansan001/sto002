@@ -1,0 +1,138 @@
+.body {
+	height: 100%;
+	margin: 0px;
+	background: #f0f4f5;
+	align-content: center;
+}
+
+.div_img {
+	width: 1902px;
+	margin: 0px;
+	height: 420px;
+	background-image: url(../img/banner.png);
+}
+
+.regin_Size {
+	height: 596px;
+	width: 1300px;
+	margin: 0px;
+}
+
+.regin_dv {
+	background: white;
+	width: 670px;
+	height: 571px;
+	margin-top: -200px;
+	margin-left: 620px;
+	border-radius: 10px 10px 10px 10px;
+}
+
+.regin_form {
+	margin-left: 50px;
+	width: 392px;
+	height: 537px;
+}
+
+.input_one {
+	width: 350px;
+	height: 50px;
+	margin-bottom: 15px;
+	background: #f0f4f5;
+	border: 0px;
+	border-radius: 5px 5px 5px 5px;
+	text-indent: 12px;
+}
+
+.input_v {
+	width: 150px;
+	height: 50px;
+	margin-bottom: 15px;
+	background: #f0f4f5;
+	border: 0px;
+	border-radius: 5px 5px 5px 5px;
+	text-indent: 12px;
+}
+
+.input_button {
+	width: 114px;
+	height: 50px;
+	color: beige;
+	background: #ee6900;
+	margin-bottom: 15px;
+	margin-left: 10px;
+	border: 0px;
+	border-radius: 5px 5px 5px 5px;
+}
+.input_button:HOVER{
+	background-color: #ff943c;
+}
+.regin_h {
+	margin-top: 150px;
+	color: #ee6900;
+	font-size: 16px;
+}
+
+.input_chek {
+	width: 350px;
+	height: 80px;
+	font-size: 12px;
+}
+
+.a_checkbox {
+	color: #ee6900;
+	text-decoration: none;
+}
+
+.a_href {
+	margin-left: 260px;
+	color: #ee6900;
+	text-decoration: none;
+}
+
+.b_href {
+	font-size: 12px;
+	color: #ee6900;
+	text-decoration: none;
+}
+
+.c_href {
+	margin-left: 60px;
+	font-size: 12px;
+}
+
+.d_href {
+	margin-left: 5px;
+	font-size: 12px;
+	color: #ee6900;
+	text-decoration: none;
+}
+
+.img_0 {
+	margin-left: 140px;
+	margin-top: 10px;
+}
+
+.input_submit {
+	width: 350px;
+	height: 50px;
+	background: #ee6900;
+	border-radius: 5px 5px 5px 5px;
+	border: 0px;
+	color: beige;
+	font-size: 16px;
+	text-align: center;
+	cursor: pointer;
+		position: relative;
+}
+.input_submit:HOVER{
+	background-color: #ff943c;
+}
+	
+
+.div_button_img {
+	width: 244px;
+	height: 311px;
+	margin-top: -535px;
+	margin-left: 420px;
+	background: url(../img/untitled1.png);
+}
