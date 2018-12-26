@@ -1,0 +1,10 @@
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.yidu.dao.czq.UserRealnameMapper_czq">
+	<!-- 修改用户登录的密码 -->
+	<update id="updateUserRealname" parameterType="com.yidu.bean.czq.UserrealName">
+		UPDATE userRealname SET userPass=#{userPass} WHERE phoneNumber=#{phoneNumber}
+	</update>
+</mapper>
