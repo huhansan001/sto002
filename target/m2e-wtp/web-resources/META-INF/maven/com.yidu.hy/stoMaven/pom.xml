@@ -207,6 +207,13 @@
 			<version>1.2.17</version>
 		</dependency>
 		
+		<!-- 导入外部项目 后端 -->
+		<dependency>
+		  <groupId>com.yidu.hy</groupId>
+ 		  <artifactId>stoMaven</artifactId>
+		  <version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
 	</dependencies>
   <build>
     <finalName>stoMaven</finalName>
