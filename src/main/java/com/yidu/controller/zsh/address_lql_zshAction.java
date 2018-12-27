@@ -37,7 +37,7 @@ public class address_lql_zshAction {
 	@RequestMapping("selectaddress_lqlAll.action")
 	public String selectaddress_lqlAll(Model model, address_lql_zsh userInfoPhone) {
 		List<Object> list = address_lql_zshService.selectaddress_lqlAll(userInfoPhone);
-		model.addAttribute("Address_lqlAllList", list);
+		model.addAttribute("list", list);
 		return "FrontEnd/admin/address";
 	}
 	

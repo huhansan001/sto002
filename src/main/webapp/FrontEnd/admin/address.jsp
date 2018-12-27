@@ -69,7 +69,7 @@
 					</div>
 					<div class="textcenter">
 						<span><a href="FrontEnd/admin/account.jsp" style="text-decoration: none;">基本信息</a></span><br /><br /><br />
-						<span><a href="FrontEnd/admin/address.css"  style="color: rgb(237, 105, 0);">地址中心</a></span><br /><br /><br />
+						<span><a href="#" id="tiaozhuandizhi" style="color: rgb(237, 105, 0);">地址中心</a></span><br /><br /><br />
 						<span><a href="FrontEnd/admin/account.jsp" style="text-decoration: none;">帐号绑定</a></span><br /><br /><br />
 						<span><a href="FrontEnd/admin/account.jsp" style="text-decoration: none;">月结客户</a></span><br /><br /><br />
 						<span><a href="FrontEnd/admin/nameVerification.jsp"  style="text-decoration: none;">实名认证</a></span><br /><br /><br />
@@ -182,6 +182,10 @@
 					<div id="two4"></div>
 					
 					<script type="text/javascript">
+						$("#tiaozhuandizhi").click(function(){
+							window.location.replace("http://localhost:8080/stoMaven/selectaddress_lqlAll.action?userInfoPhone="+getCookie("loginPhone"));
+						});
+					
 						$(".user_out").click(function(){
 							window.location.href="FrontEnd/login.jsp";
 						});
