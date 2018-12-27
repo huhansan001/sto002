@@ -235,7 +235,7 @@
 												var splitstr=r.split(" ");
 												$("#two .pick-province").text(splitstr[0]);
 												$("#two .pick-city").text(splitstr[1]);
-												$("#two n.pick-county").text(splitstr[2]);
+												$("#two .pick-county").text(splitstr[2]);
 												
 												//关闭灰色 jQuery 遮罩 
 												$("#fullbg,#dialog").hide(); 
