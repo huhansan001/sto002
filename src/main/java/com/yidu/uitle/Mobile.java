@@ -50,12 +50,13 @@ public class Mobile {
 		//（1）调试期间，请使用用系统默认的短信内容：您的验证码是：【变量】。请不要把验证码泄露给其他人。；
 		//（2）请使用APIID（查看APIID请登录用户中心->验证码短信->产品总览->APIID）及 APIkey来调用接口；
 		//（3）该代码仅供接入互亿无线短信接口参考使用，客户可根据实际需要自行编写；
-
 		// request.getSession().setAttribute("mobile_code", 123456);
-
+		//未使用
+		//APIID：C37294551
+		//APIKEY：8e105d6fb02cb90cb4963a8168f6db0a   
 		String postUrl = "http://106.ihuyi.cn/webservice/sms.php?method=Submit";
-		String account = "C14536395"; //查看用户名是登录用户中心->验证码短信->产品总览->APIID
-		String password = "62f35042dd4368487355aaae6580e21d";  //查看密码请登录用户中心->验证码短信->产品总览->APIKEY
+		String account = "C52864381"; //查看用户名是登录用户中心->验证码短信->产品总览->APIID
+		String password = "d8a40096324b5c63c27c6468a915e878";  //查看密码请登录用户中心->验证码短信->产品总览->APIKEY
 		String mobile = request.getParameter("mobile");
 		String content = new String("您的验证码是：" + mobile_code + "请不要把验证码泄露给其他人");
 		//Cookie cookie=new Cookie("add",String.valueOf(mobile_code1));

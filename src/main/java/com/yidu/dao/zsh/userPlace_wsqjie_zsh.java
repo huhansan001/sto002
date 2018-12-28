@@ -2,6 +2,7 @@
 
 import java.util.List;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
@@ -36,6 +37,7 @@ public interface userPlace_wsqjie_zsh {
 	 */
 	@Insert("INSERT INTO userplace_wsq(uplaceName,uplacePhone,senderAddress,uplaceAddress,uplaceMachine,uplaceEmail,uplacePayment)\r\n" + 
 			"VALUES (#{uplaceName},#{uplacePhone},#{senderAddress},#{uplaceAddress},#{uplaceMachine},#{uplaceEmail},#{uplacePayment})")
+	@Options(useGeneratedKeys = true, keyProperty = "uplaceSenderId")
 	public int insertUserPlace_wsq(userPlace_wsq_zsh userPlace);
 	
 }

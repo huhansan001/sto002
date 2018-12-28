@@ -309,34 +309,35 @@ $(function() {
 				data:uplaceName+"&"+uplacePhone+"&"+senderAddress+"&"+uplaceAddress+"&"+uplaceMachine+"&"+uplaceEmail+"&"+uplacePayment,
 				dataType:"text",
 				success : function(msg){
-					
+					if(msg!=0){
+						/*调用用户下单表（收件人）的新增方法*/
+						if(Receipt()){
+							var userName = "userName="+$("#ReceiptName").val();
+							var phoneNumber = "phoneNumber="+$("#ReceivingPhone").val();
+							var sendsAddress = "sendsAddress="+$("#ReceivingAddress").val();
+							var detailedAddress = "detailedAddress="+$("#DetailedAddressReceipt").val();
+							var machineNumber = "machineNumber="+$("#ReceivingMachine").val();
+							var ltemWeight = "ltemWeight="+$("#weight").val();
+							var itemType = "itemType="+$("input[name='DeliveryGoods']:checked").val();
+							var estimatedTime = "estimatedTime="+$(".o1").val();
+							var anticipatedPrice = "anticipatedPrice="+$(".o2").val();
+							var orderTime = "orderTime="+$("#date1").val()+" "+$("#timebegin").val();
+							$.ajax({
+								type:"post",
+								url:"http://localhost:8080/stoMaven/insertOrderInforMation_gsp.action",
+								data:userName+"&"+phoneNumber+"&"+sendsAddress+"&"+detailedAddress+"&"+machineNumber+"&"+ltemWeight+"&"+itemType+"&"+estimatedTime+"&"+anticipatedPrice+"&"+orderTime,
+								dataType:"text",
+								success : function(msg){
+								}
+							});
+							var remarks= "remarks="+$("#CustomerMessage").val();
+							setCookie("remarks",remarks);
+							window.location.href="indez.jsp";
+						}
+					}
 				}
 			});
-			/*调用用户下单表（收件人）的新增方法*/
-			if(Receipt()){
-				var userName = "userName="+$("#ReceiptName").val();
-				var phoneNumber = "phoneNumber="+$("#ReceivingPhone").val();
-				var sendsAddress = "sendsAddress="+$("#ReceivingAddress").val();
-				var detailedAddress = "detailedAddress="+$("#DetailedAddressReceipt").val();
-				var machineNumber = "machineNumber="+$("#ReceivingMachine").val();
-				var ltemWeight = "ltemWeight="+$("#weight").val();
-				var itemType = "itemType="+$("input[name='DeliveryGoods']:checked").val();
-				var estimatedTime = "estimatedTime="+$(".o1").val();
-				var anticipatedPrice = "anticipatedPrice="+$(".o2").val();
-				var orderTime = "orderTime="+$("#date1").val()+" "+$("#timebegin").val();
-				$.ajax({
-					type:"post",
-					url:"http://localhost:8080/stoMaven/insertOrderInforMation_gsp.action",
-					data:userName+"&"+phoneNumber+"&"+sendsAddress+"&"+detailedAddress+"&"+machineNumber+"&"+ltemWeight+"&"+itemType+"&"+estimatedTime+"&"+anticipatedPrice+"&"+orderTime,
-					dataType:"text",
-					success : function(msg){
-						
-					}
-				});
-				PickParts();
-			}
 		}
-		
 	});
 
 })
