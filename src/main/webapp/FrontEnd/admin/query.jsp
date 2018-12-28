@@ -9,6 +9,12 @@
    		<script type="text/javascript" src="../Js/myCookie.js"></script>
 	</head>
 	<body>
+	<%-- <%!HttpServletResponse response;HttpServletRequest request;%>
+	<%
+		if(request.getSession().getAttribute("orderList")==null){
+			response.sendRedirect(request.getContextPath()+"/orderAll.action");
+		}
+	%> --%>
 		<!-- 头部 -->
 		<header>
 			<div class="header">
@@ -48,7 +54,6 @@
 			</div>
 		</nav>
 		
-		
 		<!--主体-->
 		<section>
 			<div id="central">
@@ -58,8 +63,8 @@
 						<span style="font-size: 18px; color: #555;">运单查询</span>
 					</div>
 					<div class="central_three">
-						<input type="text" class="central_chBox" maxlength="25"
-							placeholder="请输入申通快递单号，单号须用英文逗号隔开，最多可以输入10个单号"/>
+						<input type="text" class="central_chBox" id="orders" maxlength="25"
+							placeholder="请输入申通快递单号" />
 						<input type="button" id="btn" class="central_chBen" value="搜索"/>
 					</div>
 					   <div id="central_four">
@@ -70,31 +75,26 @@
                 	 	<span class="five_one">运单号</span><span class="five_two">运单最新状态</span><span class="five_three">操作</span>
                 	 </div>  
                 	 <!--隐藏的DIV-->
-             		<div id="central_six">
+             		<div class="central_six">
              			  <div>
              			  		<div class="central_mark">
-             			  			yyy
+             			  			
              			  		</div>
              			  		<div class="central_state">
-             			  			用书
+             			  			
              			  		</div>
              			  		<div class="central_do">
              			  			<a id="central_dot">查询时效路由</a>
              			  			<a >订阅</a>
              			  		</div>
              			  </div>
-             			 
-             			  
-             			  <span class="central_little">福建泉州转运中心-已装袋发往-湖南长沙转运中心</span><br />
-             			  <span class="central_little">2018-12-04 00:09:45</span><br /><br />
-             			  <span class="central_little">福建柳城公司-已装袋发往-福建泉州转运中心</span><br />
-             			  <span class="central_little">2018-12-03 23:12:32</span><br /><br />
-             			  <span class="central_little">福建柳城公司-已发往-福建泉州转运中心</span><br />
-             			  <span class="central_little">2018-12-03 23:12:32</span><br /><br />
-             			  <span class="central_little">2福建柳城公司-潘炳森-已收件</span><br />
-             			  <span class="central_little">2018-12-03 23:12:32</span><br />
-             			  
-             		</div>
+             			  <div class="titles">
+	             			  <!-- <span class="central_little">福建泉州转运中心-已装袋发往-湖南长沙转运中心</span><br />
+	             			  <span class="central_little">2018-12-04 00:09:45</span><br /><br />
+	             			  <span class="central_little">福建泉州转运中心-已装袋发往-湖南长沙转运中心</span><br />
+	             			  <span class="central_little">2018-12-04 00:09:45</span><br /><br /> -->
+             			  </div >
+             		<!-- |||||||||||||||||||||||||||||||||||||||||||| -->
 				</div>
              	
 			</div> 
@@ -129,7 +129,7 @@
 		<div class="copyright">
 			<div class="copy">
 				<span class="copyright">
-               		? 2017.All RIGHT RESERVED.申通快递有限公司 版权所有
+               		©  2017.All RIGHT RESERVED.申通快递有限公司 版权所有
                		<img src="img/ghs.png" style="background: #f0f4f5;margin-left: 30px;" />
                    	<span style="color: #ed6a00;background-color: #f0f4f5;">沪ICP备13037807号-1</span>
 				</span>
@@ -147,25 +147,48 @@
 			$(function(){
 				$(".daohangtishiyonghu").text(getCookie("loginPhone"));
 			});
-			
-			$("#btn").click(function(){
-				layer.msg('辜狗子和佩琪  出来了！！ ');
-			})
 			/*-------------*/
 			$(".central_chBen").click(function(){
-				$("#central_six").show();
-				$("#central_six").css("height","95px");
+				var values=$("#orders").val();
+				if(values.length>0){
+					$.ajax({
+						type : "post",
+						url : "http://localhost:8080/stoMaven/selectWaybill.action",
+						data : 'values='+values,
+						dataType : "json",
+						async : false,
+						success : function(msg) {
+							if(msg.length>0){
+								$(".central_mark").text(msg[0].waybillNumber);
+								$(".central_state").text(msg[msg.length-1].shuttleState);
+								for (var i = 0; i < msg.length; i++) {
+									$(".titles").append(
+									"<span class='central_little'>"+msg[i].routingState+"</span><br />"+
+									"<span class='central_little'>"+msg[i].shuStaTime+"</span><br /><br />")
+								}
+								$(".central_six").show();
+							}else{
+								layer.msg('运单号不正确');
+							}
+						}
+					});
+				}else{
+					layer.msg('请输入运单号');
+				}
+				//$("#central_six").css("height","95px");
 			})
 			var temp = 0;
 			
 			$("#central_dot").click(function(){
 				if(temp==0){
 					$(".central_little").show();
-					$("#central_six").css("height","350px");
+					
+					$(".titles").css("display","block");
 					temp = 1;
 				}else if(temp == 1){
 					$(".central_little").hide();
-					$("#central_six").css("height","95px");
+					$(".titles").css("display","none");
+					//$("#central_six").css("height","95px");
 					temp=0;
 				}
 			})
