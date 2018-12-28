@@ -333,6 +333,10 @@ $(function() {
 						
 					}
 				});
+				var remarks= "remarks="+$("#CustomerMessage").val();
+				setCookie("remarks",remarks);
+				alert(getCookie("remarks"));
+				window.location.href="indez.jsp";
 				PickParts();
 			}
 		}
