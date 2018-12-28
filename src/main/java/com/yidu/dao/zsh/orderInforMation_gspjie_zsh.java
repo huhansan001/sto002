@@ -32,8 +32,8 @@ public interface orderInforMation_gspjie_zsh {
 	 * 	<!-- 新增用户下单信息（收件人）信息 -->
 	 * @return
 	 */
-	@Insert("INSERT INTO orderInformation_gsp(userName,phoneNumber,sendsAddress,detailedAddress,machineNumber,ltemWeight,itemType,estimatedTime,anticipatedPrice,orderTime)\r\n" + 
-			"VALUES (#{userName},#{phoneNumber},#{sendsAddress},#{detailedAddress},#{machineNumber},#{ltemWeight},#{itemType},#{estimatedTime},#{anticipatedPrice},#{orderTime});")
+	@Insert("INSERT INTO orderInformation_gsp(userName,phoneNumber,sendsAddress,detailedAddress,machineNumber,ltemWeight,itemType,estimatedTime,anticipatedPrice,uplaceSenderId,orderTime)\r\n" + 
+			"VALUES (#{userName},#{phoneNumber},#{sendsAddress},#{detailedAddress},#{machineNumber},#{ltemWeight},#{itemType},#{estimatedTime},#{anticipatedPrice},#{uplaceSenderId},#{orderTime});")
 	public int insertOrderInforMation_gsp(orderInforMation_gsp_zsh orderInforMation);
 	
 }

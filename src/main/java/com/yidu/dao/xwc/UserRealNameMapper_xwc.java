@@ -27,4 +27,5 @@ public interface UserRealNameMapper_xwc {
 	 */
 	@Update("update userRealnme set userName=#{userName},userSex=#{userSex},userNation=#{userNation},userBirthday=#{userBirthday},userIDnumber=#{userIDnumber},homeAddress=#{homeAddress},detailedAddress=#{detailedAddress} where phoneNumber=#{phoneNumber}")
 	public int updateUserRealName();
+	
 }
