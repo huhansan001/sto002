@@ -330,7 +330,9 @@ $(function() {
 								success : function(msg){
 								}
 							});
-							PickParts();
+							var remarks= "remarks="+$("#CustomerMessage").val();
+							setCookie("remarks",remarks);
+							window.location.href="indez.jsp";
 						}
 					}
 				}
