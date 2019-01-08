@@ -50,7 +50,7 @@
 								<a href="FrontEnd/admin/dingdan.jsp">订单管理</a>
 							</li>
 							<li>
-								<a href="FrontEnd/admin/account.jsp" style="color: rgb(237, 105, 0);">账户管理</a>
+								<a href="#" class="code_hu" style="color: rgb(237, 105, 0);">账户管理</a>
 							</li>
 						</ul>
 					</div>
@@ -68,7 +68,7 @@
 						<span class="titleTest" style="padding-left: 12px;font-size: 22px;">帐号管理</span>
 					</div>
 					<div class="textcenter">
-						<span><a href="FrontEnd/admin/account.jsp" style="text-decoration: none;">基本信息</a></span><br /><br /><br />
+						<span><a href="#" class="tempA" style="text-decoration: none;">基本信息</a></span><br /><br /><br />
 						<span><a href="#" id="tiaozhuandizhi" style="color: rgb(237, 105, 0);">地址中心</a></span><br /><br /><br />
 						<span><a href="FrontEnd/admin/account.jsp" style="text-decoration: none;">帐号绑定</a></span><br /><br /><br />
 						<span><a href="FrontEnd/admin/account.jsp" style="text-decoration: none;">月结客户</a></span><br /><br /><br />
@@ -182,7 +182,14 @@
 					<div id="two4"></div>
 					
 					<script type="text/javascript">
+				    	$(".code_hu").click(function(){
+				    		window.location.href="http://localhost:8080/stoMaven/selectAll.action?phoneNumber="+getCookie("loginPhone");
+				    	});
+				    	$(".tempA").click(function(){
+				    		window.location.href="http://localhost:8080/stoMaven/selectAll.action?phoneNumber="+getCookie("loginPhone");
+				    	});
 						$("#tiaozhuandizhi").click(function(){
+							
 							window.location.replace("http://localhost:8080/stoMaven/selectaddress_lqlAll.action?userInfoPhone="+getCookie("loginPhone"));
 						});
 					

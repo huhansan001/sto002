@@ -47,7 +47,7 @@
 								<a href="dingdan.jsp">订单管理</a>
 							</li>
 							<li>
-								<a href="account.jsp" style="color: rgb(237, 105, 0);">账户管理</a>
+								<a href="#" class="code_hu" style="color: rgb(237, 105, 0);">账户管理</a>
 							</li>
 						</ul>
 					</div>
@@ -65,7 +65,7 @@
 							<span style="font-size: 20px; margin-left: 10px;color: #555;">账户管理</span>
 						</div>
 						<div class="center_one1">
-							<span style="font-size: 14px;margin-left: 60px;color: #555;"><a href="account.jsp" style="font-size: 14px;color: #555;">基本信息</a></span>
+							<span style="font-size: 14px;margin-left: 60px;color: #555;"><a href="#" class="code_hu" style="font-size: 14px;color: #555;">基本信息</a></span>
 						</div>
 						<div class="center_one1">
 							<span style="font-size: 14px;margin-left: 60px;color: #555;"><a href="#" onclick="dizhizhongxin()" style="font-size: 14px;color: #555;">地址中心</a></span>
@@ -84,6 +84,12 @@
 						</div>
 					</div>
 					<script type="text/javascript">
+					$(".code_hu").click(function(){
+						window.location.href="http://localhost:8080/stoMaven/selectAll.action?phoneNumber="+getCookie("loginPhone");
+					});
+					$(".code_hu").click(function(){
+						window.location.href="http://localhost:8080/stoMaven/selectAll.action?phoneNumber="+getCookie("loginPhone");
+					});
 						function dizhizhongxin(){
 							var temp = getCookie("loginPhone");
 							window.location.href="http://localhost:8080/stoMaven/selectaddress_lqlAll.action?userInfoPhone="+temp;

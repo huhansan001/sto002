@@ -36,7 +36,7 @@
 								<a href="dingdan.jsp" class="code_guan" style="color: rgb(237, 105, 0);">订单管理</a>
 							</li>
 							<li class="code_zhang">
-								<a href="account.jsp" class="code_hu">账户管理</a>
+								<a href="#" class="code_hu">账户管理</a>
 							</li>
 						</ul>
 					</div>
@@ -131,6 +131,9 @@
 			</div>
 		</div>
 		<script type="text/javascript">
+			$(".code_hu").click(function(){
+				window.location.href="http://localhost:8080/stoMaven/selectAll.action?phoneNumber="+getCookie("loginPhone");
+			});
 			$(function(){
 				$(".daohangtishiyonghu").text(getCookie("loginPhone"));
 			});

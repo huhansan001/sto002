@@ -1,20 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>申通快递|会员中心|客户的满意,申通的追求!</title>
 <link rel="shortcut icon" href="img/sto.ico" />
-<link rel="stylesheet" type="text/css" href="css/account.css" />
-<link rel="stylesheet" type="text/css" href="css/pick-pcc.min.1.0.1.css" />
-<script type="text/javascript" src="jquery/jquery-3.2.1/jquery-3.2.1.js"></script>
-<script type="text/javascript"
-	src="jquery/jquery-3.2.1/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="layui/laydate/laydate.js"></script>
-<script type="text/javascript" src="js/pick-pcc.min.1.0.1.js"></script>
-<script type="text/javascript" src="layui/layer/layer.js"></script>
-<script type="text/javascript" src="../Js/myCookie.js"></script>
+<link rel="stylesheet" type="text/css" href="FrontEnd/admin/css/account.css" />
+<link rel="stylesheet" type="text/css" href="FrontEnd/admin/css/pick-pcc.min.1.0.1.css" />
+<script type="text/javascript" src="FrontEnd/admin/jquery/jquery-3.2.1/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="FrontEnd/admin/jquery/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="FrontEnd/admin/layui/laydate/laydate.js"></script>
+<script type="text/javascript" src="FrontEnd/admin/js/pick-pcc.min.1.0.1.js"></script>
+<script type="text/javascript" src="FrontEnd/admin/layui/layer/layer.js"></script>
+<script type="text/javascript" src="FrontEnd/Js/myCookie.js"></script>
 
 
 </head>
@@ -33,15 +33,15 @@
 		<div class="Nav_Inside">
 			<div class="NavBox">
 				<div class="Nav_logo">
-					<img src="img/logo.png" alt="Logo" />
+					<img src="FrontEnd/admin/img/logo.png" alt="Logo" />
 				</div>
 				<div class="Nav_li">
 					<ul>
-						<li><a href="BackHome.jsp">首页 </a></li>
-						<li><a href="Mailing.jsp">在线寄件</a></li>
-						<li><a href="query.jsp">运单查询</a></li>
-						<li><a href="dingdan.jsp">订单管理</a></li>
-						<li><a href="account.jsp" style="color: rgb(237, 105, 0);">账户管理</a></li>
+						<li><a href="FrontEnd/admin/BackHome.jsp">首页 </a></li>
+						<li><a href="FrontEnd/admin/Mailing.jsp">在线寄件</a></li>
+						<li><a href="FrontEnd/admin/query.jsp">运单查询</a></li>
+						<li><a href="FrontEnd/admin/dingdan.jsp">订单管理</a></li>
+						<li><a href="#" class="tempA" style="color: rgb(237, 105, 0);">账户管理</a></li>
 					</ul>
 				</div>
 			</div>
@@ -51,7 +51,7 @@
 	<div id="body">
 		<div id="w1">
 			<div id="title">
-				<span id="titleImg"><img src="img/user.png" /></span> <span
+				<span id="titleImg"><img src="FrontEnd/admin/img/user.png" /></span> <span
 					id="titleText">账户管理</span>
 			</div>
 			<ul id="ul">
@@ -64,6 +64,9 @@
 			</ul>
 		</div>
 		<script type="text/javascript">
+		$(".tempA").click(function(){
+			window.location.href="http://localhost:8080/stoMaven/selectAll.action?phoneNumber="+getCookie("loginPhone");
+		});
 			function dizhizhongxin(){
 				var temp = getCookie("loginPhone");
 				window.location.href="http://localhost:8080/stoMaven/selectaddress_lqlAll.action?userInfoPhone="+temp;
@@ -75,25 +78,26 @@
 				 <a href="javascript:void(0)" id="sw"><span class="spaceText">取消</span> </a>
 				  <a href="javascript:void(0)" id="sw1"><span class="spaceText1" id="sava">保存</span> </a>
 				 <a id="editImg">
-					<img src="img/edit.png" id="iii" /></a>
+					<img src="FrontEnd/admin/img/edit.png" id="iii" /></a>
 			</div>
 			<div id="header"></div>
+			
 			<div id="userInfoBox">
 				<div id="line">
 					<div id="l_left"   class="upUser">
 						<label>姓名：</label> <input type="text" id="userName" class="UserName"
-							name="UserName" value="" style="padding-left:10px">
+							name="UserName" value="${list[0].message_name }" style="padding-left:10px">
 					</div>
 					<div id="l_right">
 						<label>生日:</label> <input id="birthday" class="date" type="text" readonly="readonly"
-							name="Birthday" value="" style="padding-left:10px">
+							name="Birthday" value="${list[0].message_birthday} " style="padding-left:10px">
 
 					</div>
 				</div>
 				<div id="line_2">
 					<div id="l2_left"  class="upUser">
 						<label>手机：</label> <input type="text" id="phone" class="mobile" name="mobile"  maxlength="11"
-							value="" style="padding-left:10px" oninput="value=value.replace(/[^\d]/g,'')">
+							value="${list[0].message_phone }" style="padding-left:10px" oninput="value=value.replace(/[^\d]/g,'')">
 					</div>
 					<div id="l2_right">
 						<label style="position: relative;top: 30px;left: -35px;">性别:</label>
@@ -111,15 +115,16 @@
 							href="javascript:void(0)" class="pick-area pick-area4"
 							id="cityfont"
 							style="margin-top: -17px; margin-left: 62px; font-size: 14px; background: white;"></a>
-						<input type="hidden" id="city" class="city" name="city" value=""
+						<input type="hidden" id="city" class="city" name="city" value="${list[0].message_site }"
 							style="position: relative; left: 40px;padding-left:10px" >
 					</div>
 					<div id="l3_right">
 						<label>详细地址:</label>
-						<textarea id="HomeAddress" type="text" class="d12" name="HomeAddress" value="" style="padding-left:5px"></textarea>
+						<textarea id="HomeAddress" type="text" class="d12" name="HomeAddress" style="padding-left:5px">${list[0].message_address }</textarea>
 					</div>
 				</div>
 			</div>
+			
 			<div id="space">
 				<span id="spaceText">验证信息</span>
 			</div>
@@ -129,7 +134,7 @@
 			</div>
 			<div id="footer">
 				<p>
-					<span>登陆后修改您的申通账号密码</span> <a href="../wjmm1.jsp">修改>></a>
+					<span>登陆后修改您的申通账号密码</span> <a href="FrontEnd/admin/wjmm1.jsp">修改>></a>
 				</p>
 			</div>
 		</div>
@@ -152,8 +157,8 @@
 					</p>
 				</div>
 				<div class="code">
-					<img src="img/chat_code.jpg" /> <img src="img/qq_code.png" /> <img
-						src="img/pay_code.png" />
+					<img src="FrontEnd/admin/img/chat_code.jpg" /> <img src="FrontEnd/admin/img/qq_code.png" /> <img
+						src="FrontEnd/admin/img/pay_code.png" />
 					<div>
 						<span>微信公众号</span> <span>QQ公众号</span> <span>支付宝服务窗</span>
 					</div>
@@ -166,7 +171,7 @@
 	<div class="copyright">
 		<div class="copy">
 			<span class="copyright"> ? 2017.All RIGHT RESERVED.申通快递有限公司
-				版权所有 <img src="img/ghs.png"
+				版权所有 <img src="FrontEnd/admin/img/ghs.png"
 				style="background: #f0f4f5; margin-left: 30px; margin-top: 5px;" />
 				<span style="color: #ed6a00; background-color: #f0f4f5;">沪ICP备13037807号-1</span>
 			</span>
@@ -286,6 +291,11 @@
 						thisdom.next().val($(".pick-area-hidden").val()); //$(".pick-area-hidden").val()是页面中隐藏域的值，存放着每次选中一个省、市或者县的时候，当前文本存放的省市县的最新值，每点击一次下拉框里的li，这个值就会立即更新
 					}
 				});
+				var temp = $("#city").val();
+				var temp2 = temp.split(' ');
+				$(".pick-province").text(temp2[0]);
+				$(".pick-city").text(temp2[1]);
+				$(".pick-county").text(temp2[2]);
 			});
 		</script>
 </body>

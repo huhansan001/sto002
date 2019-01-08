@@ -46,7 +46,7 @@
 								<a href="dingdan.jsp">订单管理</a>
 							</li>
 							<li>
-								<a href="account.jsp">账户管理</a>
+								<a href="#" class="code_hu">账户管理</a>
 							</li>
 						</ul>
 					</div>
@@ -140,6 +140,9 @@
 		<script type="text/javascript" src="layui/layer/layer.js" ></script>
 	</body>
 	<script type="text/javascript">
+	$(".code_hu").click(function(){
+		window.location.href="http://localhost:8080/stoMaven/selectAll.action?phoneNumber="+getCookie("loginPhone");
+	});
 		$(".user_out").click(function(){
 			window.location.href="../login.jsp";
 		});

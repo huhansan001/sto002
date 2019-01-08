@@ -27,6 +27,7 @@
 			</div>
 		</header>
 		<script type="text/javascript">
+
 			$(function(){
 				$(".daohangtishiyonghu").text(getCookie("loginPhone"));
 			});
@@ -57,7 +58,7 @@
 								<a href="dingdan.jsp">订单管理</a>
 							</li>
 							<li>
-								<a href="account.jsp" >账户管理</a>
+								<a href="#" class="code_hu" >账户管理</a>
 							</li>
 						</ul>
 					</div>
@@ -201,6 +202,9 @@
 										</table>
 									</div>
 									<script type="text/javascript">
+									$(".code_hu").click(function(){
+										window.location.href="http://localhost:8080/stoMaven/selectAll.action?phoneNumber="+getCookie("loginPhone");
+									});
 											function s(q,w,e,r){
 												$("#userName").val(w);
 												$("#phone").val(e);
