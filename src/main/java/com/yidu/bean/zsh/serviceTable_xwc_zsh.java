@@ -16,7 +16,7 @@ public class serviceTable_xwc_zsh implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private int serviceId; //业务表自增长ID
 	private String	orderNumber;//订单号
-	private int	addresseeId;//收件人id	
+	private int	ordersId;//收件人id	
 	private String	orderStatus;//订单状态
 	private String	remarks;//备注  
 	private String	customer;//客服
@@ -31,12 +31,6 @@ public class serviceTable_xwc_zsh implements Serializable{
 	}
 	public void setOrderNumber(String orderNumber) {
 		this.orderNumber = orderNumber;
-	}
-	public int getAddresseeId() {
-		return addresseeId;
-	}
-	public void setAddresseeId(int addresseeId) {
-		this.addresseeId = addresseeId;
 	}
 	public String getOrderStatus() {
 		return orderStatus;
@@ -56,11 +50,16 @@ public class serviceTable_xwc_zsh implements Serializable{
 	public void setCustomer(String customer) {
 		this.customer = customer;
 	}
+	public int getOrdersId() {
+		return ordersId;
+	}
+	public void setOrdersId(int ordersId) {
+		this.ordersId = ordersId;
+	}
 	@Override
 	public String toString() {
-		return "serviceTable_xwc_zsh [serviceId=" + serviceId + ", orderNumber=" + orderNumber + ", addresseeId="
-				+ addresseeId + ", orderStatus=" + orderStatus + ", remarks=" + remarks + ", customer=" + customer
-				+ "]";
+		return "serviceTable_xwc_zsh [serviceId=" + serviceId + ", orderNumber=" + orderNumber + ", ordersId="
+				+ ordersId + ", orderStatus=" + orderStatus + ", remarks=" + remarks + ", customer=" + customer + "]";
 	}
 	
 	

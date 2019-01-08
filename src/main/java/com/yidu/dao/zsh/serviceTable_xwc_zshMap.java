@@ -20,7 +20,7 @@ public interface serviceTable_xwc_zshMap {
 	 * @param serviceTable_xwc
 	 * @return
 	 */
-	@Insert("INSERT INTO serviceTable_xwc(orderNumber,addresseeId,orderStatus,remarks,customer) VALUES(#{orderNumber},#{addresseeId},#{orderStatus},#{remarks},#{customer})")
+	@Insert("INSERT INTO serviceTable_xwc(orderNumber,ordersId,orderStatus,remarks,customer) VALUES(#{orderNumber},#{ordersId},#{orderStatus},#{remarks},#{customer})")
 	public int insertserviceTable_xwc(serviceTable_xwc_zsh serviceTable_xwc);
 	/**
 	 * 查询用户下单表（收件人）的信息

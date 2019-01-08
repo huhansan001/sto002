@@ -43,7 +43,7 @@ public class serviceTable_xwcService_zsh {
 			}
 		}
 		serviceTable_xwc.setOrderNumber(String.valueOf(s));
-		serviceTable_xwc.setAddresseeId(temp);
+		serviceTable_xwc.setOrdersId(temp);
 		serviceTable_xwc.setOrderStatus("处理中");
 		serviceTable_xwc.setCustomer("1");
 		return serviceTable_xwc_zsh.insertserviceTable_xwc(serviceTable_xwc);
