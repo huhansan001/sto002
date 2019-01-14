@@ -1,8 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
+<%!HttpServletRequest request;HttpServletResponse response;%>
+	<%
+		if(request.getSession().getAttribute("orderAll")==null){
+			response.sendRedirect(request.getContextPath()+"/OrderManagementssss.action?type=1");
+		}
+	%>
 	<head>
 		<meta charset="UTF-8">
 		<title>个人首页</title>
@@ -44,7 +51,7 @@
 								<a href="dingdan.jsp">订单管理</a>
 							</li>
 							<li>
-								<a href="#" class="code_hu">账户管理</a>
+								<a href="javascript:;" class="code_hu">账户管理</a>
 							</li>
 						</ul>
 					</div>
@@ -139,13 +146,18 @@
 				<span class="l"><a href="../customerService.jsp"  style="color: #555555;">报价时效查询</a></span>
 			</div>
 		</div>
+		<script type="text/javascript">
+	    			$(function(){
+	    				$("#tishi0${type}").css("color"," #ed6800");
+	    			})
+	    		</script>
 		<div class="serua-tue" style="border: 1px solid #ededed;border-radius: 6px;">
 			<div class="serua-hop">
 				<ul style=" margin-top:9px;width:74%;height: 25px;margin-left:10px;text-align: center;">
-                        <li style="width: 25%; float: left;list-style: none;" class="all on order">全部订单</li>
-                        <li style="width: 10%; float: left;list-style: none;" class="hand order">处理中</li>
-                        <li style="width: 12%; float: left;list-style: none;"class="cancel order">已取消</li>
-                        <li style="width: 12%; float: left;list-style: none;" class="finish order">已完成</li>
+                        <li style="width: 25%; float: left;list-style: none;" class="all on order" onclick="xiugai('',1)" id="tishi01">全部订单</li>
+                        <li style="width: 10%; float: left;list-style: none;" class="hand order" onclick="xiugai('处理中',2)" id="tishi02">处理中</li>
+                        <li style="width: 12%; float: left;list-style: none;"class="cancel order" onclick="xiugai('已取消',3)" id="tishi03">已取消</li>
+                        <li style="width: 12%; float: left;list-style: none;" class="finish order" onclick="xiugai('已完成',4)" id="tishi04">已完成</li>
                     </ul>
 			</div>
 			<table cellspacing="0" cellpadding="0" border="0"style="margin-top:5px; margin-left:30px;background:#f5f5f5; color:black;">
@@ -160,34 +172,32 @@
 			</table>
 		</div>
 		    <div class="news_list">
+		    	<c:forEach items="${orderAll}" var="x">
                     <table id="newsList">
-                    	<table>         
-                    		<tbody>
-                    			<tr>              
+                    			<tr>       
                     				<td class="tableOrder" style="width:200px"style="margin-top:40px;">                 
-                    					<a class="addresColor" id="addres" href="/Order/Detail?OrderId=ST18340190379313" style="text-decoration: none;display:inline-block;margin-bottom: 21px;">	
-                    						<img src="./img/canncel.png" alt="已取消"><br />                     
-                    						<span style="font-size: 14px;color: #ed6c00;" id="addresColors">ST18340190379313</span>                                 
+                    					<a class="addresColor" id="addres"style="text-decoration: none;display:inline-block;margin-bottom: 21px;">	
+                    						<br />                     
+                    						<span style="font-size: 14px;color: #ed6c00;" id="addresColors">${x.orderNumber}</span>                                 
                     					</a>             
                     				</td>             
                     				<td class="tablePerson" style="width:380px;margin-top:20px;">                 
-                    					<span class="addresColor"style="font-size: 14px;color: #ed6c00;">钦州市</span><span class="addresColors">滴姐&gt;</span>  
-                    					<span class="addresColor"style="font-size: 14px;color: #ed6c00;">松原市</span><span class="addresColors">啥事 快件 已取消</span>            
+                    					<span class="addresColor"style="font-size: 14px;color: #ed6c00;">${x.senderAddress}</span><span class="addresColors">${x.uplaceName }&gt;</span>  
+                    					<span class="addresColor"style="font-size: 14px;color: #ed6c00;">${x.sendsAddress }</span><span class="addresColors">${x.userName } ${x.orderStatus }</span>            
                     				</td>              
                     				<td class="tableTime" style="width:210px">                 
                     					<span></span>
-                    					<span class="addresColors">2018-12-06 19:30:10</span>             
+                    					<span class="addresColors">${x.orderTime}</span>             
                     				</td>             
                     				<td class="tablelOperate">                                  
-                    					<a class="addresColor btnBox"style="font-size: 14px;color: #ed6c00;">已取消</a>                                  
+                    					<a class="addresColor btnBox"style="font-size: 14px;color: #ed6c00;">${x.orderStatus }</a>                                  
                     					<input type="hidden" class="hiddenOrderId" value="ST18340190379313">             
-                    				</td>         
+                    				</td>  
+                    				
                     			</tr>     
-                    		</tbody>
-                    	</table>
                     </table>
+                    </c:forEach>   
                 </div>
-	</div>
 		<!-- 底部 -->
 		<footer style="background: white;margin-top: 50px;">
 			<div class="foot_slide">
@@ -224,6 +234,11 @@
 				</span>
 			</div>
 		</div>
+		<script type="text/javascript">
+		
+		
+		</script>
 	</body>
+	 <%request.getSession().setAttribute("orderAll", null);%> 
 </html>
 

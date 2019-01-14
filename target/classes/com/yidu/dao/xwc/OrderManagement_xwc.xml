@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yidu.dao.xwc.OrderManagement_xwc">
+	<select id="orderAll" resultType="HashMap"  >
+		SELECT  s.orderNumber,u.senderAddress ,u.uplaceName,o.sendsAddress,o.userName,s.orderStatus,o.orderTime 
+		FROM orderInformation_gsp o,serviceTable_xwc s,userplace_wsq u
+		WHERE o.uplaceSenderId=u.uplaceSenderId AND s.ordersId=o.ordersId
+		<choose>
+			<when test="orderNumber!=null">
+				and orderNumber=#{orderNumber}
+			</when>
+			<when test="orderStatus!=null">
+				and orderStatus=#{orderStatus}
+			</when>
+		</choose>
+	</select>
+</mapper>
