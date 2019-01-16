@@ -125,7 +125,7 @@
 	    </div>
 	 </div>
 	
-	<div class="serua-pot"style="background:#f0f4f5; color:black;height:650px ;">
+	<div class="serua-pot"style="background:#f0f4f5; color:black;">
 	<div class="mar">
 			<div class="div1">
 				<div style="height:238px;background:#fe8a4d; color:black; -moz-border-radius:5px 0px 0px 5px;   -webkit-border-radius:5px 0px 0px 5px;     border-radius:5px 0ox;0px 5px align-content: inherit;">
